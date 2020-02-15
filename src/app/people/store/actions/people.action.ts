@@ -2,23 +2,42 @@ import { createAction, props } from '@ngrx/store';
 
 import { Person } from '../../definitions/models/person.model';
 
+export enum PeopleActions {
+  ADD_PERSON = '[People Component] Add',
+  REMOVE_PERSON = '[People Component] Remove',
+  ADD_GUESTS_TO_PERSON = '[Person Component] Add guests',
+  REMOVE_GUESTS_TO_PERSON = '[Person Component] Remove guests',
+  TOGGLE_ATTENDING_TO_PERSON = '[Person Component] Toggle attending'
+}
+
 export const addPerson = createAction(
-  '[People Component] Add',
+  PeopleActions.ADD_PERSON,
   props<{ personToAdd: Person }>()
 );
 export const removePerson = createAction(
-  '[People Component] Remove',
-  props<{ personToRemove: Person }>()
+  PeopleActions.REMOVE_PERSON,
+  props<{ id: number }>()
 );
+
 export const addGuests = createAction(
-  '[Person Component] Add guests',
-  props<{ currentGuests: number }>()
+  PeopleActions.ADD_GUESTS_TO_PERSON,
+  props<{ id: number }>()
 );
+
 export const removeGuests = createAction(
-  '[Person Component] Remove guests',
-  props<{ currentGuests: number }>()
+  PeopleActions.REMOVE_GUESTS_TO_PERSON,
+  props<{ id: number }>()
 );
+
 export const toggleAttending = createAction(
-  '[Person Component] Toggle attending',
-  props<{ attending: boolean }>()
+  PeopleActions.TOGGLE_ATTENDING_TO_PERSON,
+  props<{ id: number }>()
 );
+
+
+export type PeopleActionsType =
+  | typeof addPerson
+  | typeof removePerson
+  | typeof addGuests
+  | typeof removeGuests
+  | typeof toggleAttending;

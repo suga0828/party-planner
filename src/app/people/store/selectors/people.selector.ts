@@ -1,5 +1,5 @@
 import { createFeatureSelector } from '@ngrx/store';
 
-import { peopleFeatureName } from '../../definitions/people.constant';
+import { peopleFeatureKey } from '../../definitions/people.constant';
 
-export const getPeopleState = createFeatureSelector<any>(peopleFeatureName);
+export const getPeopleState = createFeatureSelector<any>(peopleFeatureKey);

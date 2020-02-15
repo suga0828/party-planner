@@ -1,1 +1,1 @@
-export const peopleFeatureName = 'people';
+export const peopleFeatureKey = 'people';

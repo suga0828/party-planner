@@ -6,13 +6,14 @@ import { PeopleComponent } from './people.component';
 
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './store';
+import { peopleFeatureName } from './definitions/people.constant';
 
 @NgModule({
   declarations: [PeopleComponent],
   imports: [
     CommonModule,
     PeopleRoutingModule,
-    StoreModule.forFeature('people', reducers)
+    StoreModule.forFeature(peopleFeatureName, reducers)
   ]
 })
 export class PeopleModule { }

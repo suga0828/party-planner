@@ -1,7 +1,7 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import * as PeopleActions from '../actions/people.action';
 
-import { People } from '../../definitions/models/people.model';
+import { People } from '../../definitions/people.model';
 
 export const initialState: { people: People } = {
   people: []
@@ -14,8 +14,8 @@ export const peopleReducer = createReducer(
       ...state,
       people: [...state.people].splice(state.people.findIndex(person => person.id === id), 1)
     })
-  ),
-  );
+  )
+);
 
 export function reducer(state: { people: People }, action: Action): { people: People } {
   return peopleReducer(state, action);

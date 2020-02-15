@@ -1,6 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 
-import { Person } from '../../definitions/models/person.model';
+import { Person } from '../../definitions/person.model';
 
 export enum PeopleActions {
   ADD_PERSON = '[People Component] Add',

@@ -1,0 +1,23 @@
+<table>
+  <tbody>
+    <tr>
+      <th>Name</th>
+      <th>Guests</th>
+      <th>Attending</th>
+    </tr>
+    <ng-container *ngIf="people.length; else noPeople">
+      <app-person
+        *ngFor="let person of people"
+        [person]="person"
+        (addGuest)="addGuest(person)"
+        (removeGuest)="removeGuest(person)"
+        (attending)="toggleAttending(person)"
+      ></app-person>
+    </ng-container>
+    <ng-template #noPeople>
+      <tr>
+        <td colspan="3">No data</td>
+      </tr>
+    </ng-template>
+  </tbody>
+</table>

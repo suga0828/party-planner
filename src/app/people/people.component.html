@@ -1,16 +1,4 @@
 <h1>Party Planner</h1>
-<select>
-  <option value="all">all</option>
-  <option value="attending">attending</option>
-  <option value="guests">guests</option>
-</select>
-<input #input type="text" placeholder="Enter the name of the person" />
-<button (click)="addPerson(input.value)">Add person</button>
-<ng-container *ngFor="let person of (state | async).people">
-  <app-person
-    [person]="person"
-    (addGuest)="addGuest(person)"
-    (removeGuest)="removeGuest(person)"
-    (attending)="toggleAttending(person)"
-  ></app-person>
-</ng-container>
+<app-filter-select></app-filter-select>
+<app-person-input></app-person-input>
+<app-person-list [people]="(state | async).people"></app-person-list>

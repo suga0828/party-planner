@@ -3,7 +3,7 @@ import * as PeopleActions from '../actions/people.action';
 
 import { People } from '../../definitions/people.model';
 
-export const initialState: People = [];
+import { initialState } from '../states';
 
 export const peopleReducer = createReducer(
   initialState,

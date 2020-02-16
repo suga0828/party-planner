@@ -7,9 +7,10 @@ import { PeopleComponent } from './people.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './store';
 import { peopleFeatureKey } from './definitions/people.constant';
+import { PersonComponent } from './components/person/person.component';
 
 @NgModule({
-  declarations: [PeopleComponent],
+  declarations: [PeopleComponent, PersonComponent],
   imports: [
     CommonModule,
     PeopleRoutingModule,

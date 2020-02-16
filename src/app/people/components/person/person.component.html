@@ -1,0 +1,27 @@
+<table>
+  <tbody>
+    <tr>
+      <th>Name</th>
+      <th>Guests</th>
+      <th>Attending</th>
+    </tr>
+    <tr>
+      <td>{{ person.name }}</td>
+      <td>
+        <button (click)="addGuest.emit()">+</button>
+        {{ person.guests }}
+        <button *ngIf="person.guests > 0" (click)="removeGuest.emit()">
+          -
+        </button>
+      </td>
+      <td>
+        <input
+          id="attending"
+          type="checkbox"
+          (change)="attending.emit()"
+          [checked]="person.attending"
+        />
+      </td>
+    </tr>
+  </tbody>
+</table>

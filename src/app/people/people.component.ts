@@ -31,4 +31,16 @@ export class PeopleComponent implements OnInit {
     };
     this._store.dispatch({ type: PeopleActions.ADD_PERSON, personToAdd });
   }
+
+  addGuest(person: Person) {
+    this._store.dispatch({ type: PeopleActions.ADD_GUESTS_TO_PERSON, id: person.id });
+  }
+
+  removeGuest(person: Person) {
+    this._store.dispatch({ type: PeopleActions.REMOVE_GUESTS_TO_PERSON, id: person.id });
+  }
+
+  toggleAttending(person: Person) {
+    this._store.dispatch({ type: PeopleActions.TOGGLE_ATTENDING_TO_PERSON, id: person.id });
+  }
 }

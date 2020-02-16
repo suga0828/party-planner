@@ -7,5 +7,10 @@
 <input #input type="text" placeholder="Enter the name of the person" />
 <button (click)="addPerson(input.value)">Add person</button>
 <ng-container *ngFor="let person of (state | async).people">
-  {{ person | json }}
+  <app-person
+    [person]="person"
+    (addGuest)="addGuest(person)"
+    (removeGuest)="removeGuest(person)"
+    (attending)="toggleAttending(person)"
+  ></app-person>
 </ng-container>

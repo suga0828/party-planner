@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
-import { PeopleActions, getPeopleState } from './store';
 import { People } from './definitions/people.model';
-import { Person } from './definitions/person.model';
+import { Filters } from './definitions/filter.constant';
+
+import { getPeopleState } from './store';
 
 @Component({
   selector: 'app-people',
@@ -13,10 +15,17 @@ import { Person } from './definitions/person.model';
 })
 export class PeopleComponent implements OnInit {
 
-  state: Observable<{ people: People }>;
+  people: People;
+  state: Observable<{ people: People, filter: Filters }>;
+  select: Observable<{ filter: Filters }>;
+
 
   constructor(private readonly _store: Store<People>) {
-    this.state = _store.pipe(select(getPeopleState));
+    this.state = _store.pipe(
+      select(getPeopleState),
+      // To do: apply filter
+      // map(s => s.people.filter(s.filter))
+    );
   }
 
   ngOnInit(): void {

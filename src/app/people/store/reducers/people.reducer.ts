@@ -3,10 +3,10 @@ import * as PeopleActions from '../actions/people.action';
 
 import { People } from '../../definitions/people.model';
 
-import { initialState } from '../states';
+import { peopleInitialState } from '../states';
 
 export const peopleReducer = createReducer(
-  initialState,
+  peopleInitialState,
   on(PeopleActions.addPerson, (people, { personToAdd }) => [...people, personToAdd]),
   on(PeopleActions.removePerson, (people, { id }) => people.filter(el => el.id !== id)),
   on(PeopleActions.addGuests, (people, { id }) => people.map(person => {

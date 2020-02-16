@@ -1,3 +1,3 @@
 import { People } from '../../definitions/people.model';
 
-export const initialState: People = [];
+export const peopleInitialState: People = [];

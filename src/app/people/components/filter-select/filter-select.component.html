@@ -1,5 +1,3 @@
-<select>
-  <option value="all">all</option>
-  <option value="attending">attending</option>
-  <option value="guests">guests</option>
+<select #select (change)="setFilter(select.value)">
+  <option *ngFor="let filter of Filters" [value]="filter">{{ filter }}</option>
 </select>

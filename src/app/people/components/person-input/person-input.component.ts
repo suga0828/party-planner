@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Person } from '../../definitions/person.model';
 import { Store } from '@ngrx/store';
 import { PeopleActions } from '../../store';
@@ -10,6 +10,8 @@ import { People } from '../../definitions/people.model';
   styleUrls: ['./person-input.component.scss']
 })
 export class PersonInputComponent implements OnInit {
+
+  @ViewChild('input') input: ElementRef;
 
   constructor(private readonly _store: Store<People >) { }
 
@@ -24,5 +26,6 @@ export class PersonInputComponent implements OnInit {
       attending: false
     };
     this._store.dispatch({ type: PeopleActions.ADD_PERSON, personToAdd });
+    this.input.nativeElement.value = null;
   }
 }

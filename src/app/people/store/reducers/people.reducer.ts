@@ -1,7 +1,7 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import * as PeopleActions from '../actions/people.action';
 
-import { People } from '../../definitions/people.model';
+import { People } from '../../definitions/people.constant';
 
 import { peopleInitialState } from '../states';
 

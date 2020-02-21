@@ -1,4 +1,4 @@
-export const peopleFeatureKey = 'peopleList';
+export const peopleFeatureKey = 'people';
 
 export interface Person {
   id: number;

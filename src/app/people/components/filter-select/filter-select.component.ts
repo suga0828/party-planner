@@ -1,23 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+
 import { Store } from '@ngrx/store';
-import { Filters } from '../../definitions/filter.constant';
+
 import { filterActions } from '../../store/actions/filter.action';
+import { Filters } from '../../definitions/filter.constant';
 
 @Component({
   selector: 'app-filter-select',
   templateUrl: './filter-select.component.html',
   styleUrls: ['./filter-select.component.scss']
 })
-export class FilterSelectComponent implements OnInit {
+export class FilterSelectComponent {
 
   Filters = Object.values(Filters);
 
   constructor(private readonly _store: Store<Filters>) { }
 
-  ngOnInit(): void {
-  }
-
-  // To do: refactor dispatch
   setFilter(filter: string) {
     let type: string;
     switch (filter) {

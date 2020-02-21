@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Person, People } from '../../definitions/people.constant';
 import { Store } from '@ngrx/store';
 import { PeopleActions } from '../../store';
@@ -8,14 +8,11 @@ import { PeopleActions } from '../../store';
   templateUrl: './person-input.component.html',
   styleUrls: ['./person-input.component.scss']
 })
-export class PersonInputComponent implements OnInit {
+export class PersonInputComponent {
 
   @ViewChild('input') input: ElementRef;
 
   constructor(private readonly _store: Store<People>) { }
-
-  ngOnInit(): void {
-  }
 
   addPerson(name: string) {
     const personToAdd: Person = {
@@ -24,7 +21,7 @@ export class PersonInputComponent implements OnInit {
       guests: 0,
       attending: false
     };
-    this._store.dispatch({ type: PeopleActions.ADD_PERSON, personToAdd });
+    this._store.dispatch({ type: PeopleActions.ADD_PERSON, payload: personToAdd });
     this.input.nativeElement.value = null;
   }
 }

@@ -1,6 +1,6 @@
 import { People } from './people.constant';
 
-export const moduleFeatureKey = 'people';
+export const moduleFeatureKey = 'peopleModule';
 
 export interface Module {
   people: People;

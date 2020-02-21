@@ -1,4 +1,4 @@
 <h1>Party Planner</h1>
 <app-filter-select></app-filter-select>
 <app-person-input></app-person-input>
-<app-person-list [people]="(state | async).people"></app-person-list>
+<app-person-list [people]="people | async"></app-person-list>

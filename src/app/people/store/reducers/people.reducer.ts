@@ -7,26 +7,26 @@ import { peopleInitialState } from '../states';
 
 export const peopleReducer = createReducer(
   peopleInitialState,
-  on(PeopleActions.addPerson, (people, { personToAdd }) => [...people, personToAdd]),
-  on(PeopleActions.removePerson, (people, { id }) => people.filter(el => el.id !== id)),
-  on(PeopleActions.addGuests, (people, { id }) => people.map(person => {
-    if (person.id === id) {
+  on(PeopleActions.addPerson, (people, { payload }) => [...people, payload]),
+  on(PeopleActions.removePerson, (people, { payload }) => people.filter(el => el.id !== payload)),
+  on(PeopleActions.addGuests, (people, { payload }) => people.map(person => {
+    if (person.id === payload) {
       return Object.assign({}, person, {
         guests: person.guests + 1
       });
     }
     return person;
   })),
-  on(PeopleActions.removeGuests, (people, { id }) => people.map(person => {
-    if (person.id === id) {
+  on(PeopleActions.removeGuests, (people, { payload }) => people.map(person => {
+    if (person.id === payload) {
       return Object.assign({}, person, {
         guests: person.guests - 1
       });
     }
     return person;
   })),
-  on(PeopleActions.toggleAttending, (people, { id }) => people.map(person => {
-    if (person.id === id) {
+  on(PeopleActions.toggleAttending, (people, { payload }) => people.map(person => {
+    if (person.id === payload) {
       return Object.assign({}, person, {
         attending: !person.attending
       });

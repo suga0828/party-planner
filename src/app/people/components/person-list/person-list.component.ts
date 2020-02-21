@@ -1,8 +1,7 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
-import { People } from '../../definitions/people.model';
+import { Person, People } from '../../definitions/people.constant';
 import { Store } from '@ngrx/store';
 import { PeopleActions } from '../../store';
-import { Person } from '../../definitions/person.model';
 
 @Component({
   selector: 'app-person-list',

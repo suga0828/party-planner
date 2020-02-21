@@ -1,4 +1,4 @@
-export const filterFeatureKey = 'people';
+export const filterFeatureKey = 'filter';
 
 export enum Filters {
   all = 'all',

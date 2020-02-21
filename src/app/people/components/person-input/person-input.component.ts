@@ -1,8 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { Person } from '../../definitions/person.model';
+import { Person, People } from '../../definitions/people.constant';
 import { Store } from '@ngrx/store';
 import { PeopleActions } from '../../store';
-import { People } from '../../definitions/people.model';
 
 @Component({
   selector: 'app-person-input',
@@ -13,7 +12,7 @@ export class PersonInputComponent implements OnInit {
 
   @ViewChild('input') input: ElementRef;
 
-  constructor(private readonly _store: Store<People >) { }
+  constructor(private readonly _store: Store<People>) { }
 
   ngOnInit(): void {
   }

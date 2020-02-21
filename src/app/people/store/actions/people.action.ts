@@ -1,6 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 
-import { Person } from '../../definitions/person.model';
+import { Person } from '../../definitions/people.constant';
 
 export enum PeopleActions {
   ADD_PERSON = '[People Component] Add',
@@ -12,26 +12,26 @@ export enum PeopleActions {
 
 export const addPerson = createAction(
   PeopleActions.ADD_PERSON,
-  props<{ personToAdd: Person }>()
+  props<{ payload: Person }>()
 );
 export const removePerson = createAction(
   PeopleActions.REMOVE_PERSON,
-  props<{ id: number }>()
+  props<{ payload: number }>()
 );
 
 export const addGuests = createAction(
   PeopleActions.ADD_GUESTS_TO_PERSON,
-  props<{ id: number }>()
+  props<{ payload: number }>()
 );
 
 export const removeGuests = createAction(
   PeopleActions.REMOVE_GUESTS_TO_PERSON,
-  props<{ id: number }>()
+  props<{ payload: number }>()
 );
 
 export const toggleAttending = createAction(
   PeopleActions.TOGGLE_ATTENDING_TO_PERSON,
-  props<{ id: number }>()
+  props<{ payload: number }>()
 );
 
 

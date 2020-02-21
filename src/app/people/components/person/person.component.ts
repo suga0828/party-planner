@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
-import { Person } from '../../definitions/person.model';
+import { Person } from '../../definitions/people.constant';
 
 @Component({
   selector: 'app-person',

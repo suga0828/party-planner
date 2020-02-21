@@ -3,7 +3,7 @@ import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { People } from './definitions/people.model';
+import { People } from './definitions/people.constant';
 import { Filters } from './definitions/filter.constant';
 
 import { getPeopleState } from './store';
